@@ -1,0 +1,47 @@
+## Where to place the input file ?
+
+Please add the input file in /tmp folder with the name of the file as INPUT.
+
+## How to run this ?
+
+Please go to the source folder and compile the package using the below command
+
+> javac Main.java
+
+Once compiled use te below command to run the program
+
+> java Main
+
+## How to check the output ?
+
+Once the program is executed, you should see the below log line
+
+> "Output written successfully."
+
+This means the program has successfully written the file in /tmp folder with the name of the file
+being OUTPUT
+
+## What is the time complexity of the program ?
+
+Checking if 2 sentences have a single word difference is done in O(m) time, where
+m is length of one of 2 sentences excluding the date and time.
+
+We do this for every sentence group. So if the number of sentence groups are ns and each sentence
+group has p members, the time complexity is O(ns*p*m).
+
+We also sort each group therefore the total time complexity is O(nlogn) + O(ns*p*m)
+
+## How can this be scaled ?
+
+To scale this better we should keep a track of already seen actions like "is eating at a diner",
+"is running into the car" etc. If we see a record with the same action, we don't have to check if
+the sentence differs by a word because the only way it can now change is the name, which we can
+save a set. Basically have a Action => List of names map. This will eliminate a lot of comparisons
+
+## If you had two weeks to do this task, what would you have done differently? What would be better?
+
+I would have scaled as per the above suggestion. I would have worked on making sure we don't need
+to sort the final group list based on the date and time. This can be possible because the events are
+in order
+
+
